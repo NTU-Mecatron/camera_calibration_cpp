@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 find_package(OpenCV REQUIRED)
 
 # Add the executable
-add_executable(camera_calibration camera_calibration.cpp)
+add_executable(camera_calibration src/camera_calibration.cpp)
 
 # Link OpenCV libraries
 target_link_libraries(camera_calibration ${OpenCV_LIBS})

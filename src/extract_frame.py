@@ -4,6 +4,9 @@ import os
 def extract_frames(video_path, output_folder):
     # Open the video file
     video = cv2.VideoCapture(video_path)
+    if not video.isOpened():
+        print(f"Error: Could not open video file {video_path}")
+        return
 
     # Create the output folder if it doesn't exist
     os.makedirs(output_folder, exist_ok=True)
@@ -27,6 +30,6 @@ def extract_frames(video_path, output_folder):
     video.release()
 
 if __name__ == "__main__":
-    video_path = ""
-    output_folder = "images/"
+    video_path = r"C:\Users\GiaBao\Documents\VSC\Robotics\camera_calibration_cpp\src\video\pool_calibration.mp4"
+    output_folder = r"C:\Users\GiaBao\Documents\VSC\Robotics\camera_calibration_cpp\src\image"
     extract_frames(video_path, output_folder)
